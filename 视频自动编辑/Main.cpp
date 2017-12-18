@@ -9,6 +9,7 @@
 
 int main(int argc, char *argv[]) {
 	std::vector<std::string> imageULR;
+	int typeOfDec;
 	if (argc == 1)
 		return 0;
 	else {
@@ -18,10 +19,11 @@ int main(int argc, char *argv[]) {
 				std::cout << argv[i] << std::endl;
 		}
 	}
+	std::cin >> typeOfDec;
 	std::vector<cv::Mat> srcImages = readAllImage(imageULR);
-	std::vector<cv::Mat> cutImages = ObjectDec(srcImages);
-	std::vector<cv::Mat> outFrames = imagesProcess(cutImages);
-	videoCreate(outFrames);
+	std::vector<cv::Mat> cutImages = ObjectDec(srcImages,typeOfDec);
+	//std::vector<cv::Mat> outFrames = imagesProcess(cutImages);
+	//videoCreate(outFrames);
 
 	return 0;
 }
