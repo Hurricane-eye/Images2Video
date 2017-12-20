@@ -1,5 +1,10 @@
 #include "ImagesProcessor.h"
 
+
+using namespace cv;
+
 std::vector<cv::Mat> imagesProcess(std::vector<cv::Mat>& srcImages) {
-	return std::vector<cv::Mat>();
+	std::vector<cv::Mat> outImages;
+	return outImages;
 }
+

@@ -22,8 +22,14 @@ int main(int argc, char *argv[]) {
 	std::cin >> typeOfDec;
 	std::vector<cv::Mat> srcImages = readAllImage(imageULR);
 	std::vector<cv::Mat> cutImages = ObjectDec(srcImages,typeOfDec);
-	//std::vector<cv::Mat> outFrames = imagesProcess(cutImages);
-	//videoCreate(outFrames);
+	/*if (DE_BUG) 
+		std::cout << "Numble of cutImages: "<< cutImages.size() << std::endl;
+	std::vector<cv::Mat> outFrames = imagesProcess(cutImages);
+	if (DE_BUG)
+		std::cout << "Numble of outFrames: " << outFrames.size() << std::endl;
+	videoCreate(outFrames);*/
+	if(DE_BUG) 
+		std::cout << "Done" << std::endl;
 
 	return 0;
 }
