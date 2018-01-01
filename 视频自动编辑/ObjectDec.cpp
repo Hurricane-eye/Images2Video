@@ -98,7 +98,7 @@ std::vector<cv::Mat> VehicleDec(std::vector<cv::Mat> &srcImages) {
 		found_filtered.clear();
 		cv::Mat srcImage = srcImages.at(k);
 		vehicleHOG.detectMultiScale(srcImage, found);
-		for (size_t i = 0; i < found.size(); i++) {
+		/*for (size_t i = 0; i < found.size(); i++) {
 			size_t j;
 			cv::Rect r = found[i];
 			for (j = 0; j < found.size(); j++)
@@ -106,14 +106,14 @@ std::vector<cv::Mat> VehicleDec(std::vector<cv::Mat> &srcImages) {
 					break;
 			if (j == found.size())
 				found_filtered.push_back(r);
-		}
-		for (size_t i = 0; i < found_filtered.size(); i++) {
+		}*/
+		for (size_t i = 0; i < found.size(); i++) {
 			cv::Mat outImage;
-			cv::Rect r = found_filtered[i];
+			cv::Rect r = found[i];
 			outImage = srcImage(r);
 			outImages.push_back(outImage);
 		}
-		if (found_filtered.size() == 0)
+		if (found.size() == 0)
 			outImages.push_back(srcImage);
 	}
 	if (DE_BUG) {

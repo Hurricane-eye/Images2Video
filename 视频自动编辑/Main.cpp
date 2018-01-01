@@ -20,14 +20,20 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	std::cin >> typeOfDec;
-	std::vector<cv::Mat> srcImages = readAllImage(imageULR);
+	std::vector<cv::Mat> srcImages = readAllImages(imageULR);
 	std::vector<cv::Mat> cutImages = ObjectDec(srcImages,typeOfDec);
-	/*if (DE_BUG) 
+	if (DE_BUG) 
 		std::cout << "Numble of cutImages: "<< cutImages.size() << std::endl;
 	std::vector<cv::Mat> outFrames = imagesProcess(cutImages);
-	if (DE_BUG)
+	if (DE_BUG) {
 		std::cout << "Numble of outFrames: " << outFrames.size() << std::endl;
-	videoCreate(outFrames);*/
+		/*for (size_t i = 0; i < outFrames.size(); i++) {
+			cv::namedWindow("outFrames", 2);
+			cv::imshow("outFrames", outFrames[i]);
+			cv::waitKey(0);
+		}*/
+	}
+	videoCreate(outFrames);
 	if(DE_BUG) 
 		std::cout << "Done" << std::endl;
 

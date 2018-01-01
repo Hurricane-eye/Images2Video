@@ -1,7 +1,7 @@
 #include "ImagesReader.h"
 
 
-std::vector<cv::Mat> readAllImage(std::vector<std::string>& imageURL) {
+std::vector<cv::Mat> readAllImages(std::vector<std::string>& imageURL) {
 	std::vector<cv::Mat> srcImages;
 	for (int i = 0; i < imageURL.size(); i++) {
 		auto URL = imageURL.at(i);
